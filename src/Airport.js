@@ -12,3 +12,7 @@ Airport.prototype.land_plane =function(plane){
 Airport.prototype.planes = function(){
   return planes;
 }
+
+Airport.prototype.clearForLanding = function(plane){
+
+}
