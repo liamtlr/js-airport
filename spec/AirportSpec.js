@@ -1,21 +1,41 @@
-describe("Airport", function() {
+// 'use strict';
+//
+// describe("Airport:", function() {
+//
+//   var airport;
+//   var plane;
+//
+//   beforeEach(function(){
+//     airport = new Airport();
+//     plane = jasmine.createSpy('plane', ['land']);
+//   });
+//
+//     it("starts with 0 planes", function(){
+//       expect(airport.planes.length).toEqual(0);
+//       expect(airport.planes()).toEqual([]);
+//     });
+//
+//     it('can clear planes for landing', function(){
+//       airport.clearForLanding(plane);
+//       expect(airport.planes()).toEqual([plane]);
+//     });
+//
+// });
 
-  var airport
+'use strict';
 
+describe('Airport', function(){
+  var airport;
+  var plane;
   beforeEach(function(){
     airport = new Airport();
+    plane = jasmine.createSpy('plane',['land']);
   });
-
-  describe("it has planes", function(){
-    it("starts with 0 planes", function(){
-      expect(airport.planes.length).toEqual(0);
-      expect(airport.planes()).toEqual([]);
-    });
-
-    it("gets a plane if a plane lands", function(){
-      var plane = "Test";
-      airport.land_plane(plane);
-      expect(airport.land_plane(plane).length).toEqual(2);
-    });
+  it('has no planes by default', function(){
+    expect(airport.planes()).toEqual([]);
+  });
+  it('can clear planes for landing', function(){
+    airport.clearForLanding(plane);
+    expect(airport.planes()).toEqual([plane]);
   });
 });

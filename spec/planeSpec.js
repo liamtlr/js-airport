@@ -1,15 +1,31 @@
+// 'use strict';
+//
+// describe('Plane:',function(){
+//   var plane;
+//   var airport;
+//   beforeEach(function(){
+//     plane = new Plane();
+//     airport = jasmine.createSpyObj('airport',['clearForLanding']);
+//   });
+//   it('can land at an airport', function(){
+//     plane.land(airport);
+//     expect(airport.clearForLanding).toHaveBeenCalledWith(plane);
+//   });
+// });
+
+
+
 'use strict';
 
-describe('plane',function(){
+describe('Plane',function(){
   var plane;
   var airport;
   beforeEach(function(){
     plane = new Plane();
-    airport =jasmine.createSpyObj('airport',['clearForLanding'])
+    airport = jasmine.createSpyObj('airport',['clearForLanding']);
   });
   it('can land at an airport', function(){
     plane.land(airport);
-    expect(plane.land).not.toBeUndefined()
     expect(airport.clearForLanding).toHaveBeenCalledWith(plane);
   });
 });
